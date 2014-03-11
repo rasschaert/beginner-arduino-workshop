@@ -12,6 +12,5 @@ void loop()
     int potVal = analogRead(A0);
     analogWrite(ledPin, potVal / 4);
     Serial.println(potVal);
-    delay(1);
 }
 
