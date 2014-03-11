@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Arduino beginner workshop</title>
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <link rel="stylesheet" href="css/reveal.min.css">
+        <link rel="stylesheet" href="css/theme/moon.css" id="theme">
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+        <script>
+            if( window.location.search.match( /print-pdf/gi ) ) {
+                var link = document.createElement( 'link' );
+                link.rel = 'stylesheet';
+                link.type = 'text/css';
+                link.href = 'css/print/pdf.css';
+                document.getElementsByTagName( 'head' )[0].appendChild( link );
+            }
+        </script>
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+
+                <section>
+                    <h1>Arduino workshop voor beginners</h1>
+                    <p>Arduino Day 2014</p>
+                    <p><small>Kenny Rasschaert, Inuits</small></p>
+                </section>
+
+                <section>
+                    <h2>Arduino = </h2>
+                    <h2>open hardware + open software</h2>
+                    <aside class="notes">
+                        <ul>
+                            <li>Arduino bordjes zijn herkenbaar</li>
+                            <li>niet alleen hardware, ook software</li>
+                            <li>beiden zijn <strong>open</strong></li>
+                        </ul>
+                    </aside>
+                </section>
+
+                <section>
+
+                    <section>
+                        <h2>Hardware</h2>
+                        <img src="img/factory.jpg">
+                        <p><small>Foto: Tom Igoe <a href="https://creativecommons.org/licenses/by-nc-sa/2.0/">(CC BY-NC-SA 2.0)</a></small></p>
+                    </section>
+
+                    <section>
+                        <h3>Een Arduino bordje in detail</h3>
+                        <img height="550" width="1040" src="img/detail-nl.png">
+                        <aside class="notes">
+                            <ul>
+                                <li>"Pin" is eigenlijk een gaatje</li>
+                                <li>UNO ~= vergelijkbaar met Duemilanove en Leonardo. kan hetzelfde, wel opletten juiste kiezen in IDE/inotool.</li>
+                            </ul>
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h3>Er zijn ook grotere</h3>
+                        <img height="350" src="img/mega.png">
+                        <aside class="notes">
+                            <ul>
+                                <li>Alles na digitale pin 0 en analoge pin 5 is extra</li>
+                            </ul>
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h3>...en kleinere</h3>
+                        <img height="200" src="img/nano.png">
+                        <aside class="notes">
+                            <ul>
+                                <li>Hier zijn de pins wel echte pinnen</li>
+                                <li>i.p.v. dingen in de Arduino te prikken prik je de Arduino nano ergens op</li>
+                            </ul>
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h3>Arduino + breadboard</h3>
+                        <img src="img/breadboard.jpg">
+                        <p><small>Foto: Flickr gebruiker Abuakel <a href="https://creativecommons.org/licenses/by-nc-sa/2.0/">(CC BY-NC-SA 2.0)</a></small></p>
+
+                        <aside class="notes">
+                            <ul>
+                                <li>in een breadboard kan je dingen prikken en hergebruiken</li>
+                                <li>5 gaatjes op dezelfde lijn zijn met elkaar verbonden</li>
+                                <li>jumper wire vs steekbrug</li>
+                            </ul>
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h3>Arduino + shield(s)</h3>
+                        <img height="600" src="img/shields.jpg">
+                        <p><small>Foto: John Boxall <a href="https://creativecommons.org/licenses/by-nc-sa/2.0/">(CC BY-NC-SA 2.0)</a></small></p>
+                        <aside class="notes">
+                            <ul>
+                                <li>Toon het Ethernet shield</li>
+                            </ul>
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h3>Solderen</h3>
+                        <img src="img/solderen.jpg">
+                        <p><small>Foto: Mario Klingemann <a href="https://creativecommons.org/licenses/by-nc-sa/2.0/">(CC BY-NC-SA 2.0)</a></small></p>
+                        <aside class="notes">
+                            <ul>
+                                <li>Toon het prototype shield</li>
+                            </ul>
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h3>Shrimp</h3>
+                        <a href="http://shrimping.it"><img src="img/shrimp.jpg"></a>
+                        <p><small>Foto: Les Pounder <a href="https://creativecommons.org/licenses/by-nc-sa/2.0/">(CC BY-NC-SA 2.0)</a></small></p>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Software</h2>
+                        <img height="400" src="img/binary.png">
+                        <p><small>Foto: W.Rebel, via Wikimedia Commons <a href="https://creativecommons.org/licenses/by-nc-sa/2.0/">(CC BY-SA 3.0)</a></small></p>
+                    </section>
+
+                    <section>
+                        <h3>Arduino IDE</h3>
+                        <a href="http://arduino.cc/en/Main/Software"><img src="img/ide.png"></a>
+                        <p><small>Screenshot: Wikipedia contributor Lemio <a href="https://creativecommons.org/licenses/by-nc-sa/2.0/">(CC BY-SA 3.0)</a></small></p>
+                    </section>
+
+                    <section>
+                        <h3>Command line - Ino</h3>
+                        <a href="http://inotool.org"><img src="img/ino.png"></a>
+                    </section>
+
+                    <section>
+                        <h2>Bootloader</h2>
+                        <img src="img/atmegaxx8.jpg">
+                        <p><small>Foto: Flickr gebruiker Daijo1 <a href="https://creativecommons.org/licenses/by-nc-nd/2.0/">(CC BY-NC-ND 2.0)</a></small></p>
+                    </section>
+                </section>
+
+                <section>
+                    <h3>Minimaal programma</h3>
+                    <pre><code data-trim contenteditable>
+void setup() {
+
+}
+
+void loop() {
+
+}
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>Blink</h3>
+                    <pre><code data-trim contenteditable>
+// Pin 13 is op de meeste Arduino bordjes verbonden met een ingebouwde LED.
+// Geef hem een naam:
+int led = 13;
+
+// De setup functie wordt één keer uitgevoerd als je op de reset knop drukt:
+void setup() {
+  // initializeer de digitale pin als een output.
+  pinMode(led, OUTPUT);
+}
+
+// De loop functie wordt altijd opnieuw en opnieuw uitgevoerd:
+void loop() {
+  digitalWrite(led, HIGH);   // zet de LED aan (HIGH is een hoog voltage)
+  delay(1000);               // wacht één seconde
+  digitalWrite(led, LOW);    // zet de LED af (LOW is een laag voltage)
+  delay(1000);               // wacht één seconde
+}
+                    </code></pre>
+                </section>
+            </div>
+        </div>
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.min.js"></script>
+        <script>
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
+                theme: Reveal.getQueryHash().theme,
+                transition: 'linear',
+                dependencies: [
+                    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+                ]
+            });
+        </script>
+    </body>
+</html>
