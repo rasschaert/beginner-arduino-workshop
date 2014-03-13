@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>Arduino beginner workshop</title>
+        <title>Arduino workshop voor beginners</title>
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -30,6 +30,17 @@
                     <h1>Arduino workshop voor beginners</h1>
                     <p>Arduino Day 2014</p>
                     <p><small>Kenny Rasschaert, Inuits</small></p>
+                    <aside class="notes">
+                        <ul>
+                            <li>welkom</li>
+                            <li>mezelf voorstellen</li>
+                            <li>voor beginners</li>
+                            <li>geen ervaring met electronica nodig</li>
+                            <li>geen ervaring met programmeren nodig</li>
+                            <li>aantal dingen uitleggen</li>
+                            <li>aantal dingen bouwen</li>
+                        </ul>
+                    </aside>
                 </section>
 
                 <section>
@@ -57,8 +68,13 @@
                         <img height="550" width="1040" src="img/detail-nl.png">
                         <aside class="notes">
                             <ul>
+                                <li>UNO ~= Duemilanove en Leonardo. kan hetzelfde, wel opletten juiste kiezen in IDE/inotool.</li>
+                                <li>aankoopsuggesties voor beginners</li>
                                 <li>"Pin" is eigenlijk een gaatje</li>
-                                <li>UNO ~= vergelijkbaar met Duemilanove en Leonardo. kan hetzelfde, wel opletten juiste kiezen in IDE/inotool.</li>
+                                <li>digitale pinnen zowel voor input als output (later oefeningen)</li>
+                                <li>pinnen voor analoge input staan aan de andere kant (later oefeningen)</li>
+                                <li>USB om stroom te voorzien en programma's door te sturen en seriële communicatie (later oefeningen)</li>
+                                <li>Stroom kan ook gewoon van het stopcontact komen, geen computer nodig</li>
                             </ul>
                         </aside>
                     </section>
@@ -91,7 +107,9 @@
 
                         <aside class="notes">
                             <ul>
+                                <li>straks doen we onze oefeningen met een breadboard</li>
                                 <li>in een breadboard kan je dingen prikken en hergebruiken</li>
+                                <li>zo kan je circuitjes maken zonder dat je moet solderen op een printplaat</li>
                                 <li>5 gaatjes op dezelfde lijn zijn met elkaar verbonden</li>
                                 <li>jumper wire vs steekbrug</li>
                             </ul>
@@ -104,7 +122,10 @@
                         <p><small>Foto: John Boxall <a href="https://creativecommons.org/licenses/by-nc-sa/2.0/">(CC BY-NC-SA 2.0)</a></small></p>
                         <aside class="notes">
                             <ul>
-                                <li>Toon het Ethernet shield</li>
+                                <li>onderaan zit een Arduino</li>
+                                <li>toon het Ethernet shield</li>
+                                <li>de nodige electronica zit op een bordje, bedraad naar de juiste pinnen</li>
+                                <li>eenvoudig om mee aan de slag te gaan</li>
                             </ul>
                         </aside>
                     </section>
@@ -115,7 +136,7 @@
                         <p><small>Foto: Mario Klingemann <a href="https://creativecommons.org/licenses/by-nc-sa/2.0/">(CC BY-NC-SA 2.0)</a></small></p>
                         <aside class="notes">
                             <ul>
-                                <li>Toon het prototype shield</li>
+                                <li>toon het prototype shield</li>
                             </ul>
                         </aside>
                     </section>
@@ -124,6 +145,12 @@
                         <h3>Shrimp</h3>
                         <a href="http://shrimping.it"><img src="img/shrimp.jpg"></a>
                         <p><small>Foto: Les Pounder <a href="https://creativecommons.org/licenses/by-nc-sa/2.0/">(CC BY-NC-SA 2.0)</a></small></p>
+                        <aside class="notes">
+                            <ul>
+                                <li>Arduino bestaat uiteindelijk maar uit een klein aantal componenten</li>
+                                <li>voornaamste onderdeel is de microcontroller</li>
+                            </ul>
+                        </aside>
                     </section>
                 </section>
 
@@ -138,17 +165,23 @@
                         <h3>Arduino IDE</h3>
                         <a href="http://arduino.cc/en/Main/Software"><img src="img/ide.png"></a>
                         <p><small>Screenshot: Wikipedia contributor Lemio <a href="https://creativecommons.org/licenses/by-nc-sa/2.0/">(CC BY-SA 3.0)</a></small></p>
+                        <aside class="notes">
+                            <ul>
+                                <li>volledig gratis te downloaden</li>
+                                <li>Windows, Mac en Linux</li>
+                            </ul>
+                        </aside>
                     </section>
 
                     <section>
                         <h3>Command line - Ino</h3>
                         <a href="http://inotool.org"><img src="img/ino.png"></a>
-                    </section>
-
-                    <section>
-                        <h2>Bootloader</h2>
-                        <img src="img/atmegaxx8.jpg">
-                        <p><small>Foto: Flickr gebruiker Daijo1 <a href="https://creativecommons.org/licenses/by-nc-nd/2.0/">(CC BY-NC-ND 2.0)</a></small></p>
+                        <aside class="notes">
+                            <ul>
+                                <li>geschreven in Python</li>
+                                <li>enkel voor Mac en Linux</li>
+                            </ul>
+                        </aside>
                     </section>
                 </section>
 
@@ -163,29 +196,63 @@ void loop() {
 
 }
                     </code></pre>
+                    <aside class="notes">
+                        <ul>
+                            <li>accolades</li>
+                            <li>setup wordt eenmalig uitgevoerd bij opstarten en reset</li>
+                            <li>loop blijft herhalen</li>
+                        </ul>
+                    </aside>
                 </section>
 
                 <section>
-                    <h3>Blink</h3>
-                    <pre><code data-trim contenteditable>
-// Pin 13 is op de meeste Arduino bordjes verbonden met een ingebouwde LED.
-// Geef hem een naam:
+                    <section>
+                        <h3>Blink</h3>
+                        <pre><code data-trim contenteditable>
+/*
+  Blink
+  Turns on an LED on for one second, then off for one second, repeatedly.
+ 
+  This example code is in the public domain.
+ */
+ 
+// Pin 13 has an LED connected on most Arduino boards.
+// give it a name:
 int led = 13;
 
-// De setup functie wordt één keer uitgevoerd als je op de reset knop drukt:
-void setup() {
-  // initializeer de digitale pin als een output.
-  pinMode(led, OUTPUT);
+// the setup routine runs once when you press reset:
+void setup() {                
+  // initialize the digital pin as an output.
+  pinMode(led, OUTPUT);     
 }
 
-// De loop functie wordt altijd opnieuw en opnieuw uitgevoerd:
+// the loop routine runs over and over again forever:
 void loop() {
-  digitalWrite(led, HIGH);   // zet de LED aan (HIGH is een hoog voltage)
-  delay(1000);               // wacht één seconde
-  digitalWrite(led, LOW);    // zet de LED af (LOW is een laag voltage)
-  delay(1000);               // wacht één seconde
+  digitalWrite(led, HIGH);   // turn the LED on (HIGH is the voltage level)
+  delay(1000);               // wait for a second
+  digitalWrite(led, LOW);    // turn the LED off by making the voltage LOW
+  delay(1000);               // wait for a second
 }
-                    </code></pre>
+                        </code></pre>
+                        <aside class="notes">
+                            <ul>
+                                <li>alles tussen /* */ en na // is commentaar</li>
+                                <li>compiler ("verify") gaat alles omzetten naar binaire code</li>
+                                <li>tijd is mogelijk door kwarts kristal</li>
+                            </ul>
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h3>Digitale output op een extern ledje</h3>
+                        <img src="img/blink.png">
+                        <aside class="notes">
+                            <ul>
+                                <li>weerstand</li>
+                                <li>wet van ohm</li>
+                            </ul>
+                        </aside>
+                    </section>
                 </section>
             </div>
         </div>
