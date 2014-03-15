@@ -32,13 +32,11 @@
                     <p><small>Kenny Rasschaert, Inuits</small></p>
                     <aside class="notes">
                         <ul>
-                            <li>welkom</li>
-                            <li>mezelf voorstellen</li>
                             <li>voor beginners</li>
                             <li>geen ervaring met electronica nodig</li>
                             <li>geen ervaring met programmeren nodig</li>
-                            <li>aantal dingen uitleggen</li>
-                            <li>aantal dingen bouwen</li>
+                            <li>ik ga een aantal dingen uitleggen</li>
+                            <li>we gaan samen een aantal dingen bouwen</li>
                         </ul>
                     </aside>
                 </section>
@@ -56,7 +54,6 @@
                 </section>
 
                 <section>
-
                     <section>
                         <h2>Hardware</h2>
                         <img src="img/factory.jpg">
@@ -81,21 +78,22 @@
 
                     <section>
                         <h3>Er zijn ook grotere</h3>
-                        <img height="350" src="img/mega.png">
+                        <img height="400" src="img/mega.png">
                         <aside class="notes">
                             <ul>
-                                <li>Alles na digitale pin 0 en analoge pin 5 is extra</li>
+                                <li>alles na digitale pin 0 en analoge pin 5 is extra</li>
                             </ul>
                         </aside>
                     </section>
 
                     <section>
                         <h3>...en kleinere</h3>
-                        <img height="200" src="img/nano.png">
+                        <img height="150" src="img/nano.png">
                         <aside class="notes">
                             <ul>
-                                <li>Hier zijn de pins wel echte pinnen</li>
+                                <li>hier zijn de pins wel echte pinnen</li>
                                 <li>i.p.v. dingen in de Arduino te prikken prik je de Arduino nano ergens op</li>
+                                <li>"ergens" is een breadboard (volgende slide)</li>
                             </ul>
                         </aside>
                     </section>
@@ -104,7 +102,6 @@
                         <h3>Arduino + breadboard</h3>
                         <img src="img/breadboard.jpg">
                         <p><small>Foto: Flickr gebruiker Abuakel <a href="https://creativecommons.org/licenses/by-nc-sa/2.0/">(CC BY-NC-SA 2.0)</a></small></p>
-
                         <aside class="notes">
                             <ul>
                                 <li>straks doen we onze oefeningen met een breadboard</li>
@@ -137,6 +134,7 @@
                         <aside class="notes">
                             <ul>
                                 <li>toon het prototype shield</li>
+                                <li>vermeld eventueel de soldeerworkshop</li>
                             </ul>
                         </aside>
                     </section>
@@ -187,7 +185,7 @@
 
                 <section>
                     <h3>Minimaal programma</h3>
-                    <pre><code data-trim contenteditable>
+                    <pre><code>
 void setup() {
 
 }
@@ -201,14 +199,16 @@ void loop() {
                             <li>accolades</li>
                             <li>setup wordt eenmalig uitgevoerd bij opstarten en reset</li>
                             <li>loop blijft herhalen</li>
+                            <li>toon hetzelfde in de Arduino IDE</li>
                         </ul>
                     </aside>
                 </section>
 
                 <section>
                     <section>
-                        <h3>Blink</h3>
-                        <pre><code data-trim contenteditable>
+                        <h3>Digitale output</h3>
+                        <h4>Blink</h4>
+                        <pre><code>
 /*
   Blink
   Turns on an LED on for one second, then off for one second, repeatedly.
@@ -244,12 +244,78 @@ void loop() {
                     </section>
 
                     <section>
-                        <h3>Digitale output op een extern ledje</h3>
-                        <img src="img/blink.png">
+                        <h3>Digitale output</h3>
+                        <h4>op een ander ledje</h4>
+                        <img src="img/blink-diagram.png">
                         <aside class="notes">
                             <ul>
                                 <li>weerstand</li>
                                 <li>wet van ohm</li>
+                            </ul>
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h3>Wet van Ohm</h3>
+                        <img src="img/ohm.png">
+                        <aside class="notes">
+                            <ul>
+                                <li>U = spanning (Volt)</li>
+                                <li>I = stroomsterkte (Ampere)</li>
+                                <li>R = weerstand (Ohm)</li>
+                                <li>Arduino output pin ~= 5V</li>
+                                <li>LED ~= 0.020 of 20mA en 3V</li>
+                                <li>5V - 3V = 2V; 2V / 0.02A = 100Ω</li>
+                                <li>Gebruik minstens 100Ω weerstand</li>
+                            </ul>
+                        </aside>
+                    </section>
+
+
+                    <section>
+                        <h3>Kleurcodes weerstanden</h3>
+                        <img height="700" src="img/resistor-cheat-sheet.png">
+                        <p><small>Foto: tinkerlog.com <a href="https://creativecommons.org/licenses/by-nc-sa/2.0/">(CC BY-NC-SA 2.0)</a></small></p>
+                        <aside class="notes">
+                            <ul>
+                                <li>de streep met de tolerantie staat verder van de andere strepen</li>
+                            </ul>
+                        </aside>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h3>Digitale input</h3>
+                        <h4>Drukknop</h4>
+                        <img src="img/button.jpg">
+                        <p><small>Foto: Flickr gebruiker Arduinolabs <a href="https://creativecommons.org/licenses/by-nc-sa/2.0/">(CC BY-NC-SA 2.0)</a></small></p>
+                        <aside class="notes">
+                            <ul>
+                                <li>4 beentjes, 2 paren</li>
+                                <li>prik over het midden van de breadboard</li>
+                            </ul>
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h3>Digitale input</h3>
+                        <h4>Drukknop op een breadboard</h4>
+                        <img src="img/pushbutton-diagram.png">
+                        <aside class="notes">
+                            <ul>
+                                <li>stroom gaat over de drukknop van links naar rechts, wanneer ingedrukt</li>
+                            </ul>
+                        </aside>
+                    </section>
+
+
+                    <section>
+                        <h3>Digitale input</h3>
+                        <h4>bouncing</h4>
+                        <aside class="notes">
+                            <ul>
+                                <li></li>
                             </ul>
                         </aside>
                     </section>
