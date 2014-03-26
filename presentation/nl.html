@@ -287,7 +287,8 @@
                         <p><small>Afbeelding gemaakt met Fritzing </small><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="margin-top:7px;margin-left:9px;border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/80x15.png" /></a></p>
                         <aside class="notes">
                             <ul>
-                                <li><strong>button.ino</strong> tonen in Arduino IDE</li>
+                                <li>nu echt button als input op Arduino pin</li>
+                                <li><strong>pulldown.ino</strong> tonen in Arduino IDE</li>
                                 <li>+ aanpassing met Serial</li>
                             </ul>
                         </aside>
@@ -311,6 +312,38 @@
                         <h4>Drukknop met pull-down</h4>
                         <img src="img/pushbutton-pulldown-diagram.png">
                         <p><small>Afbeelding gemaakt met Fritzing </small><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="margin-top:7px;margin-left:9px;border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/80x15.png" /></a></p>
+                        <aside class="notes">
+                            <ul>
+                                <li><strong>pulldown.ino</strong> tonen in Arduino IDE</li>
+                                <li>geen twijfel meer, de pin is ofwel HIGH ofwel LOW</li>
+                            </ul>
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h3>Digitale input</h3>
+                        <h4>Drukknop met pull-up</h4>
+                        <img src="img/pushbutton-pullup-diagram.png">
+                        <p><small>Afbeelding gemaakt met Fritzing </small><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="margin-top:7px;margin-left:9px;border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/80x15.png" /></a></p>
+                        <aside class="notes">
+                            <ul>
+                                <li><strong>pullup.ino</strong> tonen in Arduino IDE</li>
+                                <li>nu moet je de logica wel omdraaien</li>
+                            </ul>
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h3>Digitale input</h3>
+                        <h4>Drukknop met internel pull-up</h4>
+                        <img src="img/pushbutton-intpullup-diagram.png">
+                        <p><small>Afbeelding gemaakt met Fritzing </small><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="margin-top:7px;margin-left:9px;border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/80x15.png" /></a></p>
+                        <aside class="notes">
+                            <ul>
+                                <li>dus eigenlijk toch maar 2 draadjes nodig</li>
+                                <li>Pas <strong>pullup.ino</strong> aan zodat het INPUT_PULLUP gebruikt</li>
+                            </ul>
+                        </aside>
                     </section>
 
                     <section>
@@ -320,8 +353,8 @@
                         <p><small>Afbeelding: "Super Rad!", via Wikimedia Commons </small><a rel="license" href="http://creativecommons.org/publicdomain/zero/1.0/"><img src="http://i.creativecommons.org/p/zero/1.0/80x15.png" style="margin-top:7px;margin-left:9px;border-width:0" alt="CC0" /></a></p>
                         <aside class="notes">
                             <ul>
-                                <li><strong>bouncy_button.ino</strong> tonen in Arduino IDE</li>
-                                <li><strong>debouncy_button.ino</strong> tonen in Arduino IDE</li>
+                                <li><strong>bouncy.ino</strong> tonen in Arduino IDE</li>
+                                <li><strong>debouncy.ino</strong> tonen in Arduino IDE</li>
                                 <li><strong>Debounce.ino</strong> tonen in Arduino IDE</li>
                             </ul>
                         </aside>
