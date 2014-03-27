@@ -15,7 +15,7 @@ void loop() {
   }
   else {
     Serial.println("!!!! LOW !!!!");
-    digitalWrite(ledPin, LOW);
+    digitalWrite(ledPin, HIGH);
   }
   delay(100);
 }
