@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Arduino workshop for beginners</title>
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <link rel="stylesheet" href="css/reveal.min.css">
+        <link rel="stylesheet" href="css/theme/moon.css" id="theme">
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+        <script>
+            if( window.location.search.match( /print-pdf/gi ) ) {
+                var link = document.createElement( 'link' );
+                link.rel = 'stylesheet';
+                link.type = 'text/css';
+                link.href = 'css/print/pdf.css';
+                document.getElementsByTagName( 'head' )[0].appendChild( link );
+            }
+        </script>
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+
+                <section>
+                    <h1>Arduino workshop for beginners</h1>
+                    <p>Arduino Day 2014</p>
+                    <p><small>Kenny Rasschaert, Inuits </small><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="margin-top:7px;margin-left:9px;border-width:0" src="http://i.creativecommons.org/l/by/4.0/80x15.png" /></a></p>
+                    <aside class="notes">
+                        <ul>
+                            <li>for beginners</li>
+                            <li>no prior experience with electronics required</li>
+                            <li>no prior experience with programming required</li>
+                            <li>I'll explain some things</li>
+                            <li>we'll make some things together</li>
+                        </ul>
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>Arduino = </h2>
+                    <h2>open hardware + open software</h2>
+                    <p><img style="padding:20px;margin:0px;" width="600" src="img/cc.png">
+                    <aside class="notes">
+                        <ul>
+                            <li>Arduino boards are instantly recognizable</li>
+                            <li>niet just hardware, there's free software too</li>
+                            <li>both are <strong>open</strong></li>
+                        </ul>
+                    </aside>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Hardware</h2>
+                        <img src="img/factory.jpg">
+                        <p><small>Photo: Tom Igoe </small><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.0/"><img alt="Creative Commons License" style="margin-top:7px;margin-left:9px;border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/2.0/80x15.png" /></a></p>
+                    </section>
+
+                    <section>
+                        <h3>Een Arduino bordje in detail</h3>
+                        <img height="550" width="1040" src="img/detail-en.png">
+                        <p><small>Photo: Arduino SA </small><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="margin-top:7px;margin-left:9px;border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/80x15.png" /></a></p>
+                        <aside class="notes">
+                            <ul>
+                                <li>UNO ~= Duemilanove and Leonardo. capable of the same, select the right one in the IDE/inotool.</li>
+                                <li>offer shopping suggestions for beginners</li>
+                                <li>"pin" is a term for a logic gate, it's actually a hole here, thanks to the headers</li>
+                                <li>digital pins for both input and output (I'll demonstrate how to do both later)</li>
+                                <li>separate pins for analog input (I'll demonstrate to use these later as well)</li>
+                                <li>USB supplies power, transfers programs and transfers serial communications (I'll demonstrate this later)</li>
+                                <li>you don't need the computer all the time, there are other power sources</li>
+                            </ul>
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h3>Some are bigger</h3>
+                        <img height="400" src="img/mega.png">
+                        <p><small>Photo: Arduino SA </small><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="margin-top:7px;margin-left:9px;border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/80x15.png" /></a></p>
+                        <aside class="notes">
+                            <ul>
+                                <li>the pins after digital pin 0 and analog pin 5 are extra</li>
+                            </ul>
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h3>Some are smaller</h3>
+                        <img height="150" src="img/nano.png">
+                        <p><small>Photo: Arduino SA </small><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="margin-top:7px;margin-left:9px;border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/80x15.png" /></a></p>
+                        <aside class="notes">
+                            <ul>
+                                <li>the pins here are actual pins</li>
+                                <li>you need to prick this type into something</li>
+                                <li>such as a breadboard (next slide)</li>
+                            </ul>
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h3>Arduino + breadboard</h3>
+                        <img src="img/breadboard.jpg">
+                        <p><small>Photo: Flickr user Abuakel </small><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.0/"><img alt="Creative Commons License" style="margin-top:7px;margin-left:9px;border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/2.0/80x15.png" /></a></p>
+                        <aside class="notes">
+                            <ul>
+                                <li>we'll be doing all our exercises with a breadboard</li>
+                                <li>you prick parts and wires into it and can reuse them</li>
+                                <li>this way you can make circuits quickly, without soldering</li>
+                                <li>each set of 5 holes on the same line are connected</li>
+                                <li>flexible jumper wires, vs solid jumper wires</li>
+                            </ul>
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h3>Arduino + shields</h3>
+                        <img height="600" src="img/shields.jpg">
+                        <p><small>Photo: John Boxall </small><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.0/"><img alt="Creative Commons License" style="margin-top:7px;margin-left:9px;border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/2.0/80x15.png" /></a></p>
+                        <aside class="notes">
+                            <ul>
+                                <li>at the bottom of this photo there's an Arduino, barely visible</li>
+                                <li>show the Ethernet shield</li>
+                                <li>all the necessery parts are on a board, already wired correctly to the right pins</li>
+                                <li>very convenient to use</li>
+                            </ul>
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h3>Soldering</h3>
+                        <img src="img/solderen.jpg">
+                        <p><small>Photo: Mario Klingemann </small><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.0/"><img alt="Creative Commons License" style="margin-top:7px;margin-left:9px;border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/2.0/80x15.png" /></a></p>
+                        <aside class="notes">
+                            <ul>
+                                <li>show the prototype shield</li>
+                                <li>mention the soldering workshop</li>
+                            </ul>
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h3>Shrimp</h3>
+                        <a href="http://shrimping.it"><img src="img/shrimp.jpg"></a>
+                        <p><small>Photo: Les Pounder </small><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.0/"><img alt="Creative Commons License" style="margin-top:7px;margin-left:9px;border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/2.0/80x15.png" /></a></p>
+                        <aside class="notes">
+                            <ul>
+                                <li>an Arduino board is just a collection of parts</li>
+                                <li>the microcontroller is by far the most important component</li>
+                            </ul>
+                        </aside>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Software</h2>
+                        <img height="400" src="img/binary.png">
+                        <p><small>Photo: W.Rebel, via Wikimedia Commons </small><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="margin-top:7px;margin-left:9px;border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/80x15.png" /></a></p>
+                    </section>
+
+                    <section>
+                        <h3>Arduino IDE</h3>
+                        <a href="http://arduino.cc/en/Main/Software"><img src="img/ide.png"></a>
+                        <p><small>Screenshot: Wikipedia contributor Lemio </small><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="margin-top:7px;margin-left:9px;border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/80x15.png" /></a></p>
+                        <aside class="notes">
+                            <ul>
+                                <li>free download</li>
+                                <li>Windows, Mac and Linux</li>
+                                <li>show <strong>BareMinimum.ino</strong> in the Arduino IDE</li>
+                            </ul>
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h3>Command line - Ino</h3>
+                        <a href="http://inotool.org"><img src="img/ino.png"></a>
+                        <aside class="notes">
+                            <ul>
+                                <li>Python</li>
+                                <li>only for Mac and Linux</li>
+                            </ul>
+                        </aside>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h3>Digital output</h3>
+                        <h4>LED</h4>
+                        <img height="550" src="img/led.jpg">
+                        <p><small>Photo: Flickr user Albir </small><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.0/"><img alt="Creative Commons License" style="margin-top:7px;margin-left:9px;border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/2.0/80x15.png" /></a></p>
+                        <aside class="notes">
+                            <ul>
+                                <li>digital = 1 or 0</li>
+                                <li>show <strong>Blink.ino</strong> in the Arduino IDE</li>
+                            </ul>
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h3>Digital output</h3>
+                        <h4>on a different LED</h4>
+                        <img src="img/blink-diagram.png">
+                        <p><small>Image made with Fritzing </small><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="margin-top:7px;margin-left:9px;border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/80x15.png" /></a></p>
+                        <aside class="notes">
+                            <ul>
+                                <li>resistance</li>
+                                <li>Ohm's law</li>
+                                <li>adapt <strong>Blink.ino</strong></li>
+                            </ul>
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h3>Ohm's law</h3>
+                        <img src="img/ohm.png">
+                        <aside class="notes">
+                            <ul>
+                                <li>U = Volt</li>
+                                <li>I = Ampere</li>
+                                <li>R = Ohm</li>
+                                <li>Arduino output pin ~= 5V</li>
+                                <li>LED ~= 0.020 or 20mA and 3V</li>
+                                <li>5V - 3V = 2V; 2V / 0.02A = 100Ω</li>
+                                <li>Use at least 100Ω resistor</li>
+                            </ul>
+                        </aside>
+                    </section>
+
+
+                    <section>
+                        <h3>Color codes for resistors</h3>
+                        <img height="640" src="img/resistor-cheat-sheet.png">
+                        <p><small>Photo: tinkerlog.com </small><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.0/"><img alt="Creative Commons License" style="margin-top:7px;margin-left:9px;border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/2.0/80x15.png" /></a></p>
+                        <aside class="notes">
+                            <ul>
+                                <li>The tolerance line is further from the other lines</li>
+                            </ul>
+                        </aside>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h3>Digital input</h3>
+                        <h4>Push button</h4>
+                        <img src="img/button.jpg">
+                        <p><small>Photo: Flickr user Arduinolabs </small><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.0/"><img alt="Creative Commons License" style="margin-top:7px;margin-left:9px;border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/2.0/80x15.png" /></a></p>
+                    </section>
+
+                    <section>
+                        <h3>Digital input</h3>
+                        <h4>Push button</h4>
+                        <img src="img/pushbutton-legs.png">
+                        <p><small>Image made with Fritzing </small><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="margin-top:7px;margin-left:9px;border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/80x15.png" /></a></p>
+                        <aside class="notes">
+                            <ul>
+                                <li>4 legs, 2 pairs</li>
+                                <li>push it over the middle of a breadboard</li>
+                                <li>pushing the button has the same effect as holding two wires together</li>
+                            </ul>
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h3>Digital input</h3>
+                        <h4>Push button</h4>
+                        <img src="img/pushbutton-simple-diagram.png">
+                        <p><small>Image made with Fritzing </small><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="margin-top:7px;margin-left:9px;border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/80x15.png" /></a></p>
+                        <aside class="notes">
+                            <ul>
+                                <li>this simply uses the Arduino as a power supply</li>
+                                <li>no program needed</li>
+                            </ul>
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h3>Digital input</h3>
+                        <h4>Push button</h4>
+                        <img src="img/pushbutton-diagram.png">
+                        <p><small>Image made with Fritzing </small><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="margin-top:7px;margin-left:9px;border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/80x15.png" /></a></p>
+                        <aside class="notes">
+                            <ul>
+                                <li>now the button is the input for an Arduino IO pin</li>
+                                <li>show <strong>pulldown.ino</strong> in the Arduino IDE</li>
+                                <li>+ add Serial</li>
+                            </ul>
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h3>Digital input</h3>
+                        <h4>"Floating" input</h4>
+                        <img width="800" src="img/floating.jpg">
+                        <p><small>Photo: Horia Varlan </small><a rel="license" href="http://creativecommons.org/licenses/by/2.0/"><img alt="Creative Commons License" style="margin-top:7px;margin-left:9px;border-width:0" src="http://i.creativecommons.org/l/by/2.0/80x15.png" /></a></p>
+                        <aside class="notes">
+                            <ul>
+                                <li>high impedance</li>
+                                <li>the signal that comes in on the pin floats somewhere between HIGH and LOW</li>
+                            </ul>
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h3>Digital input</h3>
+                        <h4>Push button with pull-down resistor</h4>
+                        <img src="img/pushbutton-pulldown-diagram.png">
+                        <p><small>Image made with Fritzing </small><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="margin-top:7px;margin-left:9px;border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/80x15.png" /></a></p>
+                        <aside class="notes">
+                            <ul>
+                                <li>show <strong>pulldown.ino</strong> in the Arduino IDE</li>
+                                <li>no longer any doubt, the pin is either HIGH or LOW</li>
+                            </ul>
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h3>Digital input</h3>
+                        <h4>Push button with pull-up resistor</h4>
+                        <img src="img/pushbutton-pullup-diagram.png">
+                        <p><small>Image made with Fritzing </small><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="margin-top:7px;margin-left:9px;border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/80x15.png" /></a></p>
+                        <aside class="notes">
+                            <ul>
+                                <li>show <strong>pullup.ino</strong> in the Arduino IDE</li>
+                                <li>the logic is inverted now from what it was before</li>
+                            </ul>
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h3>Digital input</h3>
+                        <h4>Push button with the internal pull-up resistor</h4>
+                        <img src="img/pushbutton-intpullup-diagram.png">
+                        <p><small>Image made with Fritzing </small><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="margin-top:7px;margin-left:9px;border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/80x15.png" /></a></p>
+                        <aside class="notes">
+                            <ul>
+                                <li>built-in pull-up resistor inside the Arduino</li>
+                                <li>it turns out you only need two wires after all</li>
+                                <li>modify <strong>pullup.ino</strong> so that it uses INPUT_PULLUP</li>
+                            </ul>
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h3>Digital input</h3>
+                        <h4>Contact bounce</h4>
+                        <img width="700" src="img/Bouncy_Switch.png">
+                        <p><small>Image: "Super Rad!", via Wikimedia Commons </small><a rel="license" href="http://creativecommons.org/publicdomain/zero/1.0/"><img src="http://i.creativecommons.org/p/zero/1.0/80x15.png" style="margin-top:7px;margin-left:9px;border-width:0" alt="CC0" /></a></p>
+                        <aside class="notes">
+                            <ul>
+                                <li>show <strong>bouncy.ino</strong> in the Arduino IDE</li>
+                                <li>show <strong>debouncy.ino</strong> in the Arduino IDE</li>
+                                <li>show <strong>Debounce.ino</strong> in the Arduino IDE</li>
+                                <li>modify <strong>Debounce.ino</strong> so that it uses a debounce() function</li>
+                            </ul>
+                        </aside>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h3>Analog output</h3>
+                        <h4>PWM</h4>
+                        <img src="img/pwm.gif">
+                        <p><small>Image: Arduino SA </small><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="margin-top:7px;margin-left:9px;border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/80x15.png" /></a></p>
+                        <aside class="notes">
+                            <ul>
+                                <li>not actually analog output</li>
+                                <li>not all pins are capable of doing it</li>
+                                <li>8-bits pwm, 256 values</li>
+                                <li>show <strong>pwm.ino</strong> in the Arduino IDE</li>
+                            </ul>
+                        </aside>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h3>Analog input</h3>
+                        <h4>Potentiometer</h4>
+                        <img src="img/pot.jpg">
+                        <p><small>Photo: Roy Mohan Shearer </small><a rel="license" href="http://creativecommons.org/licenses/by-sa/2.0/"><img alt="Creative Commons License" style="margin-top:7px;margin-left:9px;border-width:0" src="http://i.creativecommons.org/l/by-sa/2.0/80x15.png" /></a></p>
+                        <aside class="notes">
+                            <ul>
+                                <li>analog input is done on special pins</li>
+                                <li>a pot is an adjustable resistor</li>
+                                <li>3 leads</li>
+                                <li>analoge input is mapt to 10 bits, 1024 values</li>
+                            </ul>
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h3>Analog input</h3>
+                        <h4>Potentiometer</h4>
+                        <img src="img/potentiometer-diagram.png">
+                        <p><small>Image made with Fritzing </small><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="margin-top:7px;margin-left:9px;border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/80x15.png" /></a></p>
+                        <aside class="notes">
+                            <ul>
+                                
+                                
+                            </ul>
+                        </aside>
+                    </section>
+                </section>
+            </div>
+        </div>
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.min.js"></script>
+        <script>
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
+                theme: Reveal.getQueryHash().theme,
+                transition: 'linear',
+                dependencies: [
+                    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+                ]
+            });
+        </script>
+    </body>
+</html>
