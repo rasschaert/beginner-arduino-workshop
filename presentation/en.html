@@ -130,30 +130,6 @@
                             </ul>
                         </aside>
                     </section>
-
-                    <section>
-                        <h3>Soldering</h3>
-                        <img src="img/solder.jpg">
-                        <p><small>Photo: Mario Klingemann </small><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.0/"><img alt="Creative Commons License" style="margin-top:7px;margin-left:9px;border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/2.0/80x15.png" /></a></p>
-                        <aside class="notes">
-                            <ul>
-                                <li>show the prototype shield</li>
-                                <li>mention the soldering workshop</li>
-                            </ul>
-                        </aside>
-                    </section>
-
-                    <section>
-                        <h3>Shrimp</h3>
-                        <a href="http://shrimping.it"><img src="img/shrimp.jpg"></a>
-                        <p><small>Photo: Les Pounder </small><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.0/"><img alt="Creative Commons License" style="margin-top:7px;margin-left:9px;border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/2.0/80x15.png" /></a></p>
-                        <aside class="notes">
-                            <ul>
-                                <li>an Arduino board is just a collection of parts</li>
-                                <li>the microcontroller is by far the most important component</li>
-                            </ul>
-                        </aside>
-                    </section>
                 </section>
 
                 <section>
@@ -232,7 +208,6 @@
                         </aside>
                     </section>
 
-
                     <section>
                         <h3>Color codes for resistors</h3>
                         <img height="640" src="img/resistor-cheat-sheet.png">
@@ -240,6 +215,52 @@
                         <aside class="notes">
                             <ul>
                                 <li>The tolerance line is further from the other lines</li>
+                            </ul>
+                        </aside>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h3>Analog output</h3>
+                        <h4>PWM</h4>
+                        <img src="img/pwm.gif">
+                        <p><small>Image: Arduino SA </small><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="margin-top:7px;margin-left:9px;border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/80x15.png" /></a></p>
+                        <aside class="notes">
+                            <ul>
+                                <li>not actually analog output</li>
+                                <li>not all pins are capable of doing it</li>
+                                <li>8-bits pwm, 256 values</li>
+                                <li>show <strong>pwm.ino</strong> in the Arduino IDE</li>
+                            </ul>
+                        </aside>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h3>Analog input</h3>
+                        <h4>Potentiometer</h4>
+                        <img src="img/pot.jpg">
+                        <p><small>Photo: Roy Mohan Shearer </small><a rel="license" href="http://creativecommons.org/licenses/by-sa/2.0/"><img alt="Creative Commons License" style="margin-top:7px;margin-left:9px;border-width:0" src="http://i.creativecommons.org/l/by-sa/2.0/80x15.png" /></a></p>
+                        <aside class="notes">
+                            <ul>
+                                <li>analog input is done on special pins</li>
+                                <li>a pot is an adjustable resistor</li>
+                                <li>3 leads</li>
+                            </ul>
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h3>Analog input</h3>
+                        <h4>Potentiometer</h4>
+                        <img src="img/potentiometer-diagram.png">
+                        <p><small>Image made with Fritzing </small><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="margin-top:7px;margin-left:9px;border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/80x15.png" /></a></p>
+                        <aside class="notes">
+                            <ul>
+                                <li>show <strong>AnalogInOutSerial.ino</strong> in the Arduino IDE</li>
+                                <li>analoge input is being mapped to 10 bits, 1024 values</li>
+                                <li>spend some time explaining map()</li>
                             </ul>
                         </aside>
                     </section>
@@ -360,53 +381,6 @@
                                 <li>show <strong>debouncy.ino</strong> in the Arduino IDE</li>
                                 <li>show <strong>Debounce.ino</strong> in the Arduino IDE</li>
                                 <li>modify <strong>Debounce.ino</strong> so that it uses a debounce() function</li>
-                            </ul>
-                        </aside>
-                    </section>
-                </section>
-
-                <section>
-                    <section>
-                        <h3>Analog output</h3>
-                        <h4>PWM</h4>
-                        <img src="img/pwm.gif">
-                        <p><small>Image: Arduino SA </small><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="margin-top:7px;margin-left:9px;border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/80x15.png" /></a></p>
-                        <aside class="notes">
-                            <ul>
-                                <li>not actually analog output</li>
-                                <li>not all pins are capable of doing it</li>
-                                <li>8-bits pwm, 256 values</li>
-                                <li>show <strong>pwm.ino</strong> in the Arduino IDE</li>
-                            </ul>
-                        </aside>
-                    </section>
-                </section>
-
-                <section>
-                    <section>
-                        <h3>Analog input</h3>
-                        <h4>Potentiometer</h4>
-                        <img src="img/pot.jpg">
-                        <p><small>Photo: Roy Mohan Shearer </small><a rel="license" href="http://creativecommons.org/licenses/by-sa/2.0/"><img alt="Creative Commons License" style="margin-top:7px;margin-left:9px;border-width:0" src="http://i.creativecommons.org/l/by-sa/2.0/80x15.png" /></a></p>
-                        <aside class="notes">
-                            <ul>
-                                <li>analog input is done on special pins</li>
-                                <li>a pot is an adjustable resistor</li>
-                                <li>3 leads</li>
-                            </ul>
-                        </aside>
-                    </section>
-
-                    <section>
-                        <h3>Analog input</h3>
-                        <h4>Potentiometer</h4>
-                        <img src="img/potentiometer-diagram.png">
-                        <p><small>Image made with Fritzing </small><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="margin-top:7px;margin-left:9px;border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/80x15.png" /></a></p>
-                        <aside class="notes">
-                            <ul>
-                                <li>show <strong>AnalogInOutSerial.ino</strong> in the Arduino IDE</li>
-                                <li>analoge input is being mapped to 10 bits, 1024 values</li>
-                                <li>spend some time explaining map()</li>
                             </ul>
                         </aside>
                     </section>

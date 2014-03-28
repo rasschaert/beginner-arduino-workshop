@@ -130,30 +130,6 @@
                             </ul>
                         </aside>
                     </section>
-
-                    <section>
-                        <h3>Solderen</h3>
-                        <img src="img/solder.jpg">
-                        <p><small>Foto: Mario Klingemann </small><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.0/"><img alt="Creative Commons License" style="margin-top:7px;margin-left:9px;border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/2.0/80x15.png" /></a></p>
-                        <aside class="notes">
-                            <ul>
-                                <li>toon het prototype shield</li>
-                                <li>vermeld eventueel de soldeerworkshop</li>
-                            </ul>
-                        </aside>
-                    </section>
-
-                    <section>
-                        <h3>Shrimp</h3>
-                        <a href="http://shrimping.it"><img src="img/shrimp.jpg"></a>
-                        <p><small>Foto: Les Pounder </small><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.0/"><img alt="Creative Commons License" style="margin-top:7px;margin-left:9px;border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/2.0/80x15.png" /></a></p>
-                        <aside class="notes">
-                            <ul>
-                                <li>Arduino bestaat uiteindelijk maar uit een klein aantal componenten</li>
-                                <li>voornaamste onderdeel is de microcontroller</li>
-                            </ul>
-                        </aside>
-                    </section>
                 </section>
 
                 <section>
@@ -240,6 +216,53 @@
                         <aside class="notes">
                             <ul>
                                 <li>de streep met de tolerantie staat verder van de andere strepen</li>
+                            </ul>
+                        </aside>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h3>Analoge output</h3>
+                        <h4>PWM</h4>
+                        <img src="img/pwm.gif">
+                        <p><small>Afbeelding: Arduino SA </small><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="margin-top:7px;margin-left:9px;border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/80x15.png" /></a></p>
+                        <aside class="notes">
+                            <ul>
+                                <li>eigenlijk niet echt analoog</li>
+                                <li>niet alle pins ondersteunen het</li>
+                                <li>8-bits pwm, 256 waarden</li>
+                                <li><strong>pwm.ino</strong> tonen in Arduino IDE</li>
+                            </ul>
+                        </aside>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h3>Analoge input</h3>
+                        <h4>Potentiometer</h4>
+                        <img src="img/pot.jpg">
+                        <p><small>Foto: Roy Mohan Shearer </small><a rel="license" href="http://creativecommons.org/licenses/by-sa/2.0/"><img alt="Creative Commons License" style="margin-top:7px;margin-left:9px;border-width:0" src="http://i.creativecommons.org/l/by-sa/2.0/80x15.png" /></a></p>
+                        <aside class="notes">
+                            <ul>
+                                <li>analoge input gebeurt op speciale pins</li>
+                                <li>regelbare weerstand</li>
+                                <li>3 contacten</li>
+                            </ul>
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h3>Analoge input</h3>
+                        <h4>Potentiometer</h4>
+                        <img src="img/potentiometer-diagram.png">
+                        <p><small>Afbeelding gemaakt met Fritzing </small><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="margin-top:7px;margin-left:9px;border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/80x15.png" /></a></p>
+                        <aside class="notes">
+                            <ul>
+                                <li><strong>AnalogInOutSerial.ino</strong> tonen in Arduino IDE</li>
+                                <li>analoge input wordt gemapt naar 10 bits, 1024 waarden</li>
+                                <li>beetje aandacht besteden aan map()</li>
                             </ul>
                         </aside>
                     </section>
@@ -360,53 +383,6 @@
                                 <li><strong>debouncy.ino</strong> tonen in Arduino IDE</li>
                                 <li><strong>Debounce.ino</strong> tonen in Arduino IDE</li>
                                 <li><strong>Debounce.ino</strong> herwerken met functie debounce()</li>
-                            </ul>
-                        </aside>
-                    </section>
-                </section>
-
-                <section>
-                    <section>
-                        <h3>Analoge output</h3>
-                        <h4>PWM</h4>
-                        <img src="img/pwm.gif">
-                        <p><small>Afbeelding: Arduino SA </small><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="margin-top:7px;margin-left:9px;border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/80x15.png" /></a></p>
-                        <aside class="notes">
-                            <ul>
-                                <li>eigenlijk niet echt analoog</li>
-                                <li>niet alle pins ondersteunen het</li>
-                                <li>8-bits pwm, 256 waarden</li>
-                                <li><strong>pwm.ino</strong> tonen in Arduino IDE</li>
-                            </ul>
-                        </aside>
-                    </section>
-                </section>
-
-                <section>
-                    <section>
-                        <h3>Analoge input</h3>
-                        <h4>Potentiometer</h4>
-                        <img src="img/pot.jpg">
-                        <p><small>Foto: Roy Mohan Shearer </small><a rel="license" href="http://creativecommons.org/licenses/by-sa/2.0/"><img alt="Creative Commons License" style="margin-top:7px;margin-left:9px;border-width:0" src="http://i.creativecommons.org/l/by-sa/2.0/80x15.png" /></a></p>
-                        <aside class="notes">
-                            <ul>
-                                <li>analoge input gebeurt op speciale pins</li>
-                                <li>regelbare weerstand</li>
-                                <li>3 contacten</li>
-                            </ul>
-                        </aside>
-                    </section>
-
-                    <section>
-                        <h3>Analoge input</h3>
-                        <h4>Potentiometer</h4>
-                        <img src="img/potentiometer-diagram.png">
-                        <p><small>Afbeelding gemaakt met Fritzing </small><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="margin-top:7px;margin-left:9px;border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/80x15.png" /></a></p>
-                        <aside class="notes">
-                            <ul>
-                                <li><strong>AnalogInOutSerial.ino</strong> tonen in Arduino IDE</li>
-                                <li>analoge input wordt gemapt naar 10 bits, 1024 waarden</li>
-                                <li>beetje aandacht besteden aan map()</li>
                             </ul>
                         </aside>
                     </section>
