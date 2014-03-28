@@ -9,12 +9,12 @@ void loop()
 {
     analogWrite(ledPin, 0);
     delay(500);
-    analogWrite(ledPin, 63);
+    analogWrite(ledPin, 63);  // 25%
     delay(500);
-    analogWrite(ledPin, 127);
+    analogWrite(ledPin, 127); // 50%
     delay(500);
-    analogWrite(ledPin, 191);
+    analogWrite(ledPin, 191); // 75%
     delay(500);
-    analogWrite(ledPin, 255);
+    analogWrite(ledPin, 255); // 100%
     delay(500);
 }

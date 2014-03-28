@@ -1,6 +1,6 @@
 /*
   This example requires a pull-down resistor
-  If you prefer a pull-up resistor, change HIGH to LOw and vice versa
+  If you prefer a pull-up resistor, change HIGH to LOW and vice versa
 */
 const int buttonPin = 2;
 int previousReading = LOW;
