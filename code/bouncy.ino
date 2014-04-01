@@ -13,7 +13,9 @@ void setup() {
 
 void loop() {
   int reading = digitalRead(buttonPin);
-  if (reading == HIGH && previousReading == LOW) {
+  // If the reading used to be LOW and is now HIGH, that marks the transition of a button being pushed
+  // a transition of HIGH to LOW would indicate the button being released, but that's not what we're counting here
+  if (previousReading == LOW && reading == HIGH) {
     counter++;
     Serial.print("Button pressed ");
     Serial.print(counter);
