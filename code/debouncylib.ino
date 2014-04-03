@@ -34,7 +34,7 @@ void loop() {
   }
 }
 
-void debounce() {
+boolean debounce() {
   boolean retVal = false;
   // read the state of the switch into a local variable:
   int reading = digitalRead(buttonPin);
